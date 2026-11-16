@@ -29,7 +29,7 @@ from datetime import datetime, timezone
 import numpy as np
 import pandas as pd
 
-START, END_INCLUSIVE = "2026-01-01", "2026-11-6"
+START, END_INCLUSIVE = "2026-01-01", "2026-11-13"
 RAW_TICKERS = ["NVDA", "AMD", "INTC", "MU", "ASML", "TSM",
                "SKHY", "000660.KS", "005930.KS", "KRW=X"]
 US_NAMES = {"NVIDIA": "NVDA", "AMD": "AMD", "Intel": "INTC",
@@ -65,8 +65,9 @@ def demo_prices() -> pd.DataFrame:
 
 
 def save_snapshot(close: pd.DataFrame) -> str:
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    path = f"prices_snapshot_{stamp}.csv"
+    #stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    #path = f"prices_snapshot_{stamp}.csv"
+    path = "prices.csv"
     close.to_csv(path)
     digest = hashlib.sha256(open(path, "rb").read()).hexdigest()
     open(path + ".sha256", "w").write(digest + "\n")
@@ -113,7 +114,7 @@ def show_grid(corr: pd.DataFrame, n_weeks: int, title: str, show: bool) -> str:
         for j in range(k):
             ax.text(j, i, f"{corr.values[i, j]:.2f}", ha="center", va="center", fontsize=10)
     fig.colorbar(im, ax=ax, label="Pearson correlation")
-    ax.set_title(f"{title}\nWeekly USD returns, {n_weeks} weeks, 1 Jan - 31 Oct 2026")
+    ax.set_title(f"{title}\nWeekly USD returns, {n_weeks} weeks, 1 Jan - 13 Nov 2026")
     fig.tight_layout()
     path = "weekly_correlation_grid.png"
     fig.savefig(path, dpi=160)

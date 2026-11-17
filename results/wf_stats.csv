@@ -1,0 +1,18 @@
+,"optimized, monthly"
+weeks,41
+total_pnl_usd,56562570.9541965
+total_pnl_pct_gmv0,56.5625709541965
+mean_weekly_pnl_usd,1379574.9013218656
+dollar_vol_weekly_usd,3601341.1254966264
+dollar_vol_annualized_usd,25969640.17683056
+dollar_vol_30day_usd,7455484.434445359
+sharpe_zero_hurdle,2.762375388348264
+sortino_zero_mar,8.065610359792087
+max_drawdown_usd,7473079.068938397
+max_drawdown_pct_gmv0,7.4730790689383975
+max_drawdown_trough,2026-06-26
+best_week_usd,14721328.70249966
+worst_week_usd,-4274935.352884058
+hit_rate_pct,60.97560975609756
+avg_turnover_per_rebalance_usd,68586560.05302796
+realized_beta_exposure_usd,39098962.46439291
